@@ -3,142 +3,1052 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Abhay Chauhan | Computational Chemistry</title>
+    <title>Abhay Chauhan | Computational Chemistry & Materials Science</title>
+
+    <meta name="description"
+        content="Abhay Chauhan - Computational Chemistry, Molecular Dynamics and Materials Science Researcher">
 
     <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            padding: 50px 25px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.7;
-            color: #333;
+            color: #263238;
+            background: #ffffff;
         }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 5px;
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e5e7eb;
+            backdrop-filter: blur(8px);
         }
 
-        h2 {
-            margin-top: 45px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .subtitle {
+        .logo {
             font-size: 20px;
-            color: #666;
+            font-weight: 700;
+            color: #172b4d;
         }
 
-        a {
-            color: #0366d6;
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #455a64;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #1565c0;
+        }
+
+        /* Main container */
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 0 25px;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 100px 0 80px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.15;
+            color: #172b4d;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            font-weight: 400;
+            color: #546e7a;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            font-size: 18px;
+            color: #455a64;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            border: 1px solid #1565c0;
+            color: #1565c0;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: #1565c0;
+            color: white;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 70px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        section h2 {
+            font-size: 30px;
+            color: #172b4d;
+            margin-bottom: 30px;
+        }
+
+        section h3 {
+            color: #263238;
+            margin-bottom: 8px;
+        }
+
+        /* Research interests */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .research-card {
+            padding: 25px;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            background: #fafbfc;
+        }
+
+        .research-card h3 {
+            color: #1565c0;
+        }
+
+        /* Projects */
+
+        .project {
+            margin-bottom: 45px;
+            padding: 30px;
+            border: 1px solid #e1e5e9;
+            border-radius: 10px;
+        }
+
+        .project h3 {
+            font-size: 22px;
+            color: #172b4d;
+        }
+
+        .project .institution {
+            color: #607d8b;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project ul {
+            margin: 15px 0 15px 20px;
+        }
+
+        .project li {
+            margin-bottom: 8px;
+        }
+
+        .methods {
+            margin-top: 15px;
+            color: #455a64;
+        }
+
+        /* Publications */
+
+        .publication {
+            padding: 25px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            font-size: 19px;
+            font-weight: 600;
+            color: #172b4d;
+        }
+
+        .journal {
+            color: #607d8b;
+            margin-top: 7px;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 8px 14px;
+            border: 1px solid #d5dbe0;
+            border-radius: 20px;
+            background: #fafafa;
+            font-size: 14px;
+        }
+
+        /* Education */
+
+        .education-item {
+            margin-bottom: 30px;
+        }
+
+        .education-item h3 {
+            font-size: 20px;
+        }
+
+        .education-item .date {
+            color: #607d8b;
+        }
+
+        /* Teaching */
+
+        .teaching {
+            padding: 25px;
+            background: #fafbfc;
+            border-left: 4px solid #1565c0;
+        }
+
+        /* Contact */
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        .contact a {
+            color: #1565c0;
             text-decoration: none;
         }
 
-        .project {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            color: #78909c;
+            font-size: 14px;
         }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <h1>Abhay Chauhan</h1>
 
-    <p class="subtitle">
-        Computational Chemistry | Molecular Simulation | Materials Science
-    </p>
+<!-- Navigation -->
 
-    <p>
-        I am a computational researcher interested in molecular dynamics,
-        computational chemistry, nanomaterials, coarse-grained modeling,
-        and machine-learning-assisted molecular simulations.
-    </p>
+<nav>
 
-    <p>
-        <a href="https://github.com/Abhay125-chauhan">GitHub</a> |
-        <a href="#">Google Scholar</a> |
-        <a href="#">CV</a> |
-        <a href="mailto:YOUR_EMAIL@example.com">Email</a>
-    </p>
+    <div class="nav-container">
 
-    <h2>Research</h2>
+        <div class="logo">
+            Abhay Chauhan
+        </div>
 
-    <p>
-        My research focuses on computational modeling of molecular and
-        nanoscale systems, with particular interest in responsive
-        nanomaterials, polymer-grafted nanoparticles, molecular dynamics,
-        and computational chemistry.
-    </p>
+        <ul class="nav-links">
 
-    <h2>Selected Projects</h2>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
 
-    <div class="project">
+        </ul>
 
-        <h3>Polymer-Grafted Nanoparticles</h3>
+    </div>
+
+</nav>
+
+
+
+<!-- Hero -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <h1>Abhay Chauhan</h1>
+
+        <h2>
+            Computational Chemistry & Molecular Simulation
+        </h2>
 
         <p>
-            Computational investigation of the structural and size
-            properties of polymer-grafted nanoparticles under different
-            temperatures and polymer hydrophobicities.
+
+            Computational researcher working at the interface of
+            molecular simulation, computational chemistry, and materials
+            science, with experience in molecular dynamics, quantum
+            chemical calculations, polymer-grafted nanoparticles,
+            and nanoscale molecular systems.
+
         </p>
 
+
+        <div class="buttons">
+
+            <a class="button"
+               href="https://github.com/Abhay125-chauhan"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a class="button"
+               href="https://scholar.google.com/citations?user=ETH3gmcAAAAJ"
+               target="_blank">
+                Google Scholar
+            </a>
+
+            <a class="button"
+               href="mailto:abhaychauhan7895625@gmail.com">
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- About -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2>About Me</h2>
+
         <p>
-            <b>Methods:</b> Molecular Dynamics, GROMACS, PLUMED
+
+            I am a computational materials scientist and chemist with
+            research experience in molecular dynamics simulations,
+            quantum chemistry, and computational modeling of molecular
+            and nanoscale systems.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            My research has focused on understanding structure,
+            dynamics, thermoresponsive behavior, hydrophobic collapse,
+            polymer conformations, and molecular interactions using
+            atomistic and coarse-grained computational approaches.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            I am particularly interested in developing computational
+            approaches to understand complex molecular systems and
+            connect molecular-level interactions with emergent
+            structural and thermodynamic behavior.
+
         </p>
 
     </div>
 
-    <div class="project">
+</section>
 
-        <h3>Molecular Dynamics Analysis Scripts</h3>
 
-        <p>
-            A collection of scripts developed for analyzing molecular
-            dynamics trajectories and extracting structural properties.
-        </p>
 
-        <p>
-            <b>Tools:</b> Python, NumPy, Pandas, Matplotlib, MDAnalysis
-        </p>
+<!-- Research -->
 
-        <a href="https://github.com/Abhay125-chauhan/Analysis_Script">
-            View project on GitHub →
-        </a>
+<section id="research">
+
+    <div class="container">
+
+        <h2>Research Interests</h2>
+
+        <div class="research-grid">
+
+
+            <div class="research-card">
+
+                <h3>Molecular Dynamics</h3>
+
+                <p>
+                    Atomistic and coarse-grained molecular dynamics
+                    simulations of polymers, nanoparticles and
+                    biomolecular systems.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>Computational Chemistry</h3>
+
+                <p>
+                    Quantum chemical calculations, DFT, molecular
+                    structure optimization, electronic structure and
+                    reaction mechanisms.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>Responsive Nanomaterials</h3>
+
+                <p>
+                    Computational design of polymer-grafted nanoparticles
+                    and investigation of temperature-, hydrophobicity-
+                    and pH-dependent structural transitions.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>Polymer & Soft Matter</h3>
+
+                <p>
+                    Polymer conformations, grafting-density effects,
+                    mushroom-to-brush transitions and polymer-solvent
+                    interactions.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>Free-Energy Methods</h3>
+
+                <p>
+                    Potential of mean force calculations, umbrella
+                    sampling and molecular-level analysis of
+                    conformational transitions.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>Computational Materials Science</h3>
+
+                <p>
+                    Molecular-level modeling of materials and interfaces
+                    to understand structure-property relationships.
+                </p>
+
+            </div>
+
+
+        </div>
 
     </div>
 
-    <h2>Publications</h2>
+</section>
 
-    <p>
-        <b>Pressure-induced CO polymerization</b>
-    </p>
 
-    <p>
-        International Journal of Quantum Chemistry
-    </p>
 
-    <h2>Software & Skills</h2>
+<!-- Research Projects -->
 
-    <p>
-        GROMACS · PLUMED · ORCA · CP2K · DFTB+ · DeepMD-kit ·
-        Python · RDKit · Molecular Dynamics · DFT · Coarse-Grained Modeling
-    </p>
+<section id="projects">
 
-    <h2>Contact</h2>
+    <div class="container">
 
-    <p>
-        Email: YOUR_EMAIL@example.com
-    </p>
+        <h2>Research Projects</h2>
+
+
+        <!-- IIT Delhi Project 1 -->
+
+        <div class="project">
+
+            <h3>
+                Designing Thermoresponsive Nanoparticles through
+                Hydrophobicity Control of Grafted Diblock Copolymers
+            </h3>
+
+            <p class="institution">
+                M.S.(R.) Thesis — Indian Institute of Technology Delhi
+            </p>
+
+            <p>
+                This project investigated how polymer hydrophobicity and
+                temperature influence the structure and conformational
+                behavior of polymer-grafted nanoparticles.
+            </p>
+
+            <ul>
+
+                <li>
+                    Designed generic polymer-grafted nanoparticle models
+                    with 20-bead polymer chains.
+                </li>
+
+                <li>
+                    Systematically varied polymer hydrophobicity from
+                    0–100% in 10% increments.
+                </li>
+
+                <li>
+                    Performed molecular dynamics simulations at 270, 300,
+                    330 and 360 K.
+                </li>
+
+                <li>
+                    Analyzed polymer–nanoparticle structure, inter-chain
+                    contacts, effective nanoparticle radius and polymer
+                    conformation.
+                </li>
+
+                <li>
+                    Calculated free-energy / PMF profiles and generated
+                    two-dimensional density maps to investigate
+                    hydrophobic collapse and temperature-dependent
+                    conformational transitions.
+                </li>
+
+            </ul>
+
+            <p class="methods">
+
+                <strong>Methods:</strong>
+                Molecular Dynamics · GROMACS · Python · VMD ·
+                Free-Energy Calculations
+
+            </p>
+
+        </div>
+
+
+
+        <!-- IIT Delhi Project 2 -->
+
+        <div class="project">
+
+            <h3>
+                MD-Guided Design of Hybrid Polymer–Protein Conjugates
+                with Tunable Aqueous Solubility and pH-Responsive
+                Polymer-Grafted Gold Nanoparticles
+            </h3>
+
+            <p class="institution">
+                Research Project — Indian Institute of Technology Delhi
+            </p>
+
+            <p>
+                Molecular dynamics simulations were used to investigate
+                polymer architecture, grafting density and pH-dependent
+                structural behavior of polymer-functionalized gold
+                nanoparticles.
+            </p>
+
+            <ul>
+
+                <li>
+                    Investigated PEG, PLL–PEG, PLL–PEG–PLL and PLL
+                    polymer architectures.
+                </li>
+
+                <li>
+                    Performed DFT dihedral scans to determine
+                    PEG–PLL linkage parameters.
+                </li>
+
+                <li>
+                    Developed PEG6–PLL6-functionalized gold nanoparticle
+                    models.
+                </li>
+
+                <li>
+                    Varied grafting density from 4 to 40 polymer chains
+                    to investigate polymer morphology and the
+                    mushroom-to-brush transition.
+                </li>
+
+                <li>
+                    Investigated pH-dependent structural changes in
+                    PEG6–PLL14 functionalized gold nanoparticles.
+                </li>
+
+            </ul>
+
+            <p class="methods">
+
+                <strong>Methods:</strong>
+                Molecular Dynamics · GROMACS · DFT · Python ·
+                VMD · Polymer Modeling
+
+            </p>
+
+        </div>
+
+
+
+        <!-- MNIT Project -->
+
+        <div class="project">
+
+            <h3>
+                Pressure-Induced Polymerization of Carbon Monoxide:
+                A Quantum Chemical Investigation of (CO)n Oligomerization
+            </h3>
+
+            <p class="institution">
+                M.Sc. Thesis — Malaviya National Institute of Technology Jaipur
+            </p>
+
+            <p>
+                This project investigated the molecular mechanism of
+                pressure-induced carbon monoxide polymerization using
+                quantum chemical calculations.
+            </p>
+
+            <ul>
+
+                <li>
+                    Investigated (CO)n clusters with n = 2–6.
+                </li>
+
+                <li>
+                    Generated structures using ABCluster and optimized
+                    them using density functional theory and
+                    coupled-cluster-level approaches.
+                </li>
+
+                <li>
+                    Investigated CO clusters confined inside He@C60
+                    and He@C180 cages to model pressure effects.
+                </li>
+
+                <li>
+                    Used ONIOM-based computational models to simulate
+                    increasing pressure through cage-size reduction.
+                </li>
+
+                <li>
+                    Analyzed structural, energetic, bonding, electronic
+                    and wavefunction properties to understand CO
+                    polymerization.
+                </li>
+
+            </ul>
+
+            <p class="methods">
+
+                <strong>Methods:</strong>
+                DFT · ONIOM · Quantum Chemistry ·
+                ABCluster · Gaussian · ORCA
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- Publications -->
+
+<section id="publications">
+
+    <div class="container">
+
+        <h2>Publications</h2>
+
+
+        <div class="publication">
+
+            <p class="publication-title">
+
+                1. Chauhan, Abhay, and Divya Nayar.
+                “Designing Thermoresponsive Nanoparticles through
+                Hydrophobicity Control of Grafted Diblock Copolymers.”
+
+            </p>
+
+            <p class="journal">
+
+                Molecular Systems Design & Engineering (2026)
+
+                <br>
+
+                DOI:
+                <a href="https://doi.org/10.1039/D6ME00040A"
+                   target="_blank">
+                    10.1039/D6ME00040A
+                </a>
+
+            </p>
+
+        </div>
+
+
+
+        <div class="publication">
+
+            <p class="publication-title">
+
+                2. Chauhan, Abhay, et al.
+                “Understanding Pressure-Induced Polymerization of
+                Carbon Monoxide at Molecular-Level: A Quantum Chemical
+                Investigation of Oligomerization of (CO)n (n = 2–6).”
+
+            </p>
+
+            <p class="journal">
+
+                International Journal of Quantum Chemistry (2026)
+
+                <br>
+
+                DOI:
+                <a href="https://doi.org/10.1002/qua.70202"
+                   target="_blank">
+                    10.1002/qua.70202
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- Education -->
+
+<section id="education">
+
+    <div class="container">
+
+        <h2>Education</h2>
+
+
+        <div class="education-item">
+
+            <h3>
+                M.S.(R.) in Materials Science
+            </h3>
+
+            <p>
+                Indian Institute of Technology (IIT) Delhi, India
+            </p>
+
+            <p class="date">
+                CGPA: 8.286 · Focus: Computational Materials Science
+            </p>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <h3>
+                M.Sc. in Chemistry
+            </h3>
+
+            <p>
+                Malaviya National Institute of Technology (MNIT) Jaipur, India
+            </p>
+
+            <p class="date">
+                CGPA: 8.005 · Focus: Computational Chemistry
+            </p>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <h3>
+                B.Sc. (Hons.) in Chemistry
+            </h3>
+
+            <p>
+                Swami Vivekanand Subharti University, Meerut, India
+            </p>
+
+            <p class="date">
+                CGPA: 7.87 · Focus: Physical and Organic Chemistry
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- Skills -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <h2>Technical Skills</h2>
+
+        <div class="skills">
+
+            <span class="skill">GROMACS</span>
+            <span class="skill">LAMMPS</span>
+            <span class="skill">ORCA</span>
+            <span class="skill">Gaussian 16</span>
+            <span class="skill">VMD</span>
+            <span class="skill">ChimeraX</span>
+            <span class="skill">Python</span>
+            <span class="skill">C++</span>
+            <span class="skill">Bash Scripting</span>
+            <span class="skill">Molecular Dynamics</span>
+            <span class="skill">DFT</span>
+            <span class="skill">ONIOM</span>
+            <span class="skill">Free-Energy Calculations</span>
+            <span class="skill">HPC</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Teaching -->
+
+<section id="teaching">
+
+    <div class="container">
+
+        <h2>Teaching Experience</h2>
+
+        <div class="teaching">
+
+            <h3>
+                Teaching Assistant — Materials Simulation Methods
+                Using High-Performance Computing (MLL 760)
+            </h3>
+
+            <p>
+                Indian Institute of Technology Delhi
+            </p>
+
+            <br>
+
+            <p>
+
+                Taught graduate students Python 3, HPC architecture,
+                parallel job execution, CPU allocation and HPC
+                commands, with hands-on training in GROMACS and
+                LAMMPS for molecular dynamics simulations.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Qualifications -->
+
+<section id="qualifications">
+
+    <div class="container">
+
+        <h2>Academic Qualifications</h2>
+
+        <div class="research-grid">
+
+            <div class="research-card">
+
+                <h3>CSIR-NET Chemistry</h3>
+
+                <p>
+                    Lectureship — 2023
+                    <br>
+                    All India Rank: <strong>20</strong>
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>GATE Chemistry</h3>
+
+                <p>
+                    2024
+                    <br>
+                    All India Rank: <strong>569</strong>
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>IIT JAM Chemistry</h3>
+
+                <p>
+                    2021
+                    <br>
+                    All India Rank: <strong>760</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Contact -->
+
+<section id="contact">
+
+    <div class="container contact">
+
+        <h2>Contact</h2>
+
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:abhaychauhan7895625@gmail.com">
+                abhaychauhan7895625@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/Abhay125-chauhan"
+               target="_blank">
+                github.com/Abhay125-chauhan
+            </a>
+        </p>
+
+        <p>
+            <strong>Google Scholar:</strong>
+            <a href="https://scholar.google.com/citations?user=ETH3gmcAAAAJ"
+               target="_blank">
+                Google Scholar Profile
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- Footer -->
+
+<footer>
+
+    © 2026 Abhay Chauhan · Computational Chemistry & Materials Science
+
+</footer>
+
 
 </body>
 
 </html>
 ```
+
