@@ -1,1135 +1,651 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Abhay Chauhan | Computational Chemistry & Materials Science</title>
-
-    <meta name="description"
-        content="Abhay Chauhan - Computational Chemistry, Molecular Dynamics and Materials Science Researcher">
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            color: #263238;
-            background: #ffffff;
-        }
-
-        /* Navigation */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,0.96);
-            border-bottom: 1px solid #e5e7eb;
-            backdrop-filter: blur(8px);
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 16px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: #172b4d;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #455a64;
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #1565c0;
-        }
-
-        /* Main container */
-
-        .container {
-            max-width: 1050px;
-            margin: auto;
-            padding: 0 25px;
-        }
-
-        /* Hero */
-
-        .hero {
-            padding: 100px 0 80px;
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            line-height: 1.15;
-            color: #172b4d;
-            margin-bottom: 15px;
-        }
-
-        .hero h2 {
-            font-size: 23px;
-            font-weight: 400;
-            color: #546e7a;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            max-width: 800px;
-            font-size: 18px;
-            color: #455a64;
-        }
-
-        .buttons {
-            margin-top: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 11px 20px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            border-radius: 6px;
-            text-decoration: none;
-            border: 1px solid #1565c0;
-            color: #1565c0;
-            font-weight: 600;
-        }
-
-        .button:hover {
-            background: #1565c0;
-            color: white;
-        }
-
-        /* Sections */
-
-        section {
-            padding: 70px 0;
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        section h2 {
-            font-size: 30px;
-            color: #172b4d;
-            margin-bottom: 30px;
-        }
-
-        section h3 {
-            color: #263238;
-            margin-bottom: 8px;
-        }
-
-        /* Research interests */
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .research-card {
-            padding: 25px;
-            border: 1px solid #e1e5e9;
-            border-radius: 8px;
-            background: #fafbfc;
-        }
-
-        .research-card h3 {
-            color: #1565c0;
-        }
-
-        /* Projects */
-
-        .project {
-            margin-bottom: 45px;
-            padding: 30px;
-            border: 1px solid #e1e5e9;
-            border-radius: 10px;
-        }
-
-        .project h3 {
-            font-size: 22px;
-            color: #172b4d;
-        }
-
-        .project .institution {
-            color: #607d8b;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .project ul {
-            margin: 15px 0 15px 20px;
-        }
-
-        .project li {
-            margin-bottom: 8px;
-        }
-
-        .methods {
-            margin-top: 15px;
-            color: #455a64;
-        }
-
-        /* Publications */
-
-        .publication {
-            padding: 25px 0;
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        .publication:last-child {
-            border-bottom: none;
-        }
-
-        .publication-title {
-            font-size: 19px;
-            font-weight: 600;
-            color: #172b4d;
-        }
-
-        .journal {
-            color: #607d8b;
-            margin-top: 7px;
-        }
-
-        /* Skills */
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            padding: 8px 14px;
-            border: 1px solid #d5dbe0;
-            border-radius: 20px;
-            background: #fafafa;
-            font-size: 14px;
-        }
-
-        /* Education */
-
-        .education-item {
-            margin-bottom: 30px;
-        }
-
-        .education-item h3 {
-            font-size: 20px;
-        }
-
-        .education-item .date {
-            color: #607d8b;
-        }
-
-        /* Teaching */
-
-        .teaching {
-            padding: 25px;
-            background: #fafbfc;
-            border-left: 4px solid #1565c0;
-        }
-
-        /* Contact */
-
-        .contact p {
-            margin-bottom: 10px;
-        }
-
-        .contact a {
-            color: #1565c0;
-            text-decoration: none;
-        }
-
-        /* Footer */
-
-        footer {
-            text-align: center;
-            padding: 35px;
-            color: #78909c;
-            font-size: 14px;
-        }
-
-        /* Mobile */
-
-        @media (max-width: 700px) {
-
-            .nav-container {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .nav-links {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                padding: 70px 0;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero h2 {
-                font-size: 19px;
-            }
-
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhay Chauhan | Computational Chemistry & Materials Science</title>
+<meta name="description" content="Abhay Chauhan — Computational Chemistry, Molecular Dynamics and Materials Science Researcher">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --paper:#FAF9F4;
+    --paper-dim:#F1EFE7;
+    --ink:#13191D;
+    --ink-soft:#48575F;
+    --line:#DBD7C9;
+    --blue:#2F5C82;
+    --blue-dim:#EAF0F4;
+    --teal:#3E9C86;
+    --teal-dim:#E8F4F0;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --maxw: 1040px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 1px 1px, rgba(19,25,29,0.05) 1px, transparent 0) 0 0/28px 28px,
+      var(--paper);
+  }
+
+  ::selection{ background:var(--teal); color:#fff; }
+
+  a{ color:var(--blue); }
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--teal);
+    outline-offset:3px;
+  }
+
+  .wrap{ max-width:var(--maxw); margin:auto; padding:0 28px; }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px; height:1px;
+    background:var(--ink-soft);
+    display:inline-block;
+  }
+
+  h1,h2,h3{ font-family:var(--mono); color:var(--ink); font-weight:600; letter-spacing:-0.01em; }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:1000;
+    background:rgba(250,249,244,0.92);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(10px);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:auto; padding:16px 28px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .logo{
+    font-family:var(--mono); font-weight:700; font-size:15px;
+    letter-spacing:.02em;
+  }
+  .logo span{ color:var(--blue); }
+  .nav-links{ list-style:none; display:flex; gap:22px; }
+  .nav-links a{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.04em;
+    text-transform:uppercase; color:var(--ink-soft); text-decoration:none;
+  }
+  .nav-links a:hover{ color:var(--blue); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 70px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:40px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:44px; line-height:1.08;
+    margin-bottom:16px;
+  }
+  .hero .role{
+    font-family:var(--serif); font-style:italic;
+    font-size:21px; color:var(--ink-soft); font-weight:400;
+    margin-bottom:22px;
+  }
+  .hero p.lede{ max-width:520px; color:var(--ink-soft); font-size:17px; }
+
+  .buttons{ margin-top:30px; display:flex; flex-wrap:wrap; gap:10px; }
+  .button{
+    font-family:var(--mono); font-size:13px; letter-spacing:.02em;
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 16px; border-radius:3px;
+    text-decoration:none; border:1px solid var(--ink);
+    color:var(--ink);
+  }
+  .button:hover{ background:var(--ink); color:var(--paper); }
+  .button.accent{ border-color:var(--blue); color:var(--blue); }
+  .button.accent:hover{ background:var(--blue); color:#fff; }
+
+  .hero-figure{ position:relative; }
+  .hero-figure svg{ width:100%; height:auto; display:block; }
+  .hero-figure figcaption{
+    font-family:var(--mono); font-size:11px; color:var(--ink-soft);
+    text-align:center; margin-top:6px; letter-spacing:.03em;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .chain{ animation:sway 7s ease-in-out infinite; transform-box:fill-box; }
+    .chain-1{ animation-delay:0s; } .chain-2{ animation-delay:.6s; }
+    .chain-3{ animation-delay:1.2s; } .chain-4{ animation-delay:1.8s; }
+    .chain-5{ animation-delay:2.4s; } .chain-6{ animation-delay:3s; }
+    @keyframes sway{
+      0%,100%{ transform:scale(1); }
+      50%{ transform:scale(0.9); }
+    }
+    .diagram-group{ animation:drift 70s linear infinite; transform-box:fill-box; }
+    @keyframes drift{ from{ transform:rotate(0deg);} to{ transform:rotate(360deg);} }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:64px 0; border-bottom:1px solid var(--line); }
+  section h2{ font-size:24px; margin-bottom:30px; }
+
+  #about p{ max-width:680px; color:var(--ink-soft); margin-bottom:14px; }
+  #about p:last-child{ margin-bottom:0; }
+
+  /* research grid */
+  .research-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .research-card{ background:var(--paper); padding:24px; }
+  .research-card h3{ font-size:14.5px; color:var(--blue); margin-bottom:8px; text-transform:uppercase; letter-spacing:.02em; }
+  .research-card:nth-child(3n+2) h3{ color:var(--teal); }
+  .research-card p{ color:var(--ink-soft); font-size:15.5px; }
+
+  /* projects */
+  .project{ margin-bottom:44px; padding-bottom:44px; border-bottom:1px dashed var(--line); }
+  .project:last-child{ margin-bottom:0; border-bottom:none; padding-bottom:0; }
+  .project h3{ font-family:var(--serif); font-weight:600; font-size:23px; line-height:1.3; margin-bottom:6px; }
+  .project .institution{ font-family:var(--mono); font-size:12px; letter-spacing:.03em; color:var(--teal); text-transform:uppercase; margin-bottom:16px; }
+  .project > p{ color:var(--ink-soft); margin-bottom:14px; max-width:700px; }
+  .project ul{ margin:0 0 16px 0; list-style:none; max-width:700px; }
+  .project li{ position:relative; padding-left:20px; margin-bottom:10px; color:var(--ink); font-size:15.5px; }
+  .project li::before{ content:"▪"; position:absolute; left:0; color:var(--blue); font-size:11px; top:5px; }
+
+  .figure-frame{ margin:18px 0 20px; }
+  .figure-frame img{ width:100%; max-width:640px; display:block; border:1px solid var(--line); }
+  .figure-frame figcaption{ font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:6px; }
+  .figure-frame.img-error{
+    max-width:640px; height:220px; border:1px dashed var(--line);
+    display:flex; align-items:center; justify-content:center;
+    background:var(--paper-dim);
+  }
+  .figure-frame.img-error img{ display:none; }
+  .figure-frame.img-error::before{
+    content: attr(data-label);
+    font-family:var(--mono); font-size:12px; color:var(--ink-soft);
+    letter-spacing:.03em; text-align:center; padding:0 20px;
+  }
+
+  .methods-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .methods-row span{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.02em;
+    padding:5px 10px; border:1px solid var(--line); border-radius:2px;
+    color:var(--ink-soft); background:var(--paper-dim);
+  }
+
+  /* publications */
+  .publication{ display:grid; grid-template-columns:44px 1fr; gap:18px; padding:22px 0; border-bottom:1px solid var(--line); }
+  .publication:last-child{ border-bottom:none; }
+  .pub-num{ font-family:var(--mono); font-size:13px; color:var(--ink-soft); padding-top:3px; }
+  .publication-title{ font-family:var(--serif); font-weight:600; font-size:18px; line-height:1.4; }
+  .journal{ font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); margin-top:8px; }
+  .journal a{ color:var(--teal); }
+
+  /* education */
+  .education-item{ display:grid; grid-template-columns:150px 1fr; gap:20px; padding:20px 0; border-bottom:1px solid var(--line); }
+  .education-item:last-child{ border-bottom:none; }
+  .education-item .date{ font-family:var(--mono); font-size:12px; color:var(--ink-soft); }
+  .education-item h3{ font-family:var(--serif); font-weight:600; font-size:18px; margin-bottom:4px; }
+  .education-item .school{ color:var(--ink-soft); font-size:15px; }
+  @media (max-width:600px){ .education-item{ grid-template-columns:1fr; gap:4px; } }
+
+  /* skills — periodic table style */
+  .skills-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(84px,1fr)); gap:8px; }
+  .element{
+    border:1px solid var(--line); border-radius:3px; padding:8px 6px;
+    aspect-ratio:1/1; display:flex; flex-direction:column; justify-content:space-between;
+    background:var(--paper-dim);
+  }
+  .element:nth-child(odd){ border-color:var(--blue); }
+  .element:nth-child(even){ border-color:var(--teal); }
+  .element .num{ font-family:var(--mono); font-size:9px; color:var(--ink-soft); }
+  .element .sym{ font-family:var(--mono); font-weight:700; font-size:19px; line-height:1; }
+  .element .name{ font-family:var(--mono); font-size:8.5px; color:var(--ink-soft); letter-spacing:.01em; line-height:1.2; }
+
+  /* teaching */
+  .teaching{ padding:26px 28px; border-left:3px solid var(--blue); background:var(--blue-dim); }
+  .teaching h3{ font-family:var(--serif); font-size:19px; margin-bottom:4px; }
+  .teaching .place{ font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-bottom:14px; }
+  .teaching p:last-child{ color:var(--ink-soft); }
+
+  /* qualifications */
+  .qual-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .qual-card{ background:var(--paper); padding:24px; text-align:left; }
+  .qual-card h3{ font-size:14px; margin-bottom:10px; color:var(--ink); }
+  .qual-card .rank{ font-family:var(--mono); font-size:28px; color:var(--teal); font-weight:700; }
+  .qual-card .rank-label{ font-family:var(--mono); font-size:11px; color:var(--ink-soft); display:block; margin-top:2px; }
+  .qual-card .year{ font-family:var(--mono); font-size:12px; color:var(--ink-soft); }
+
+  /* contact */
+  .contact-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .contact-card{ padding:20px 0; }
+  .contact-card .k{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); display:block; margin-bottom:8px; }
+  .contact-card a{ font-family:var(--mono); font-size:14.5px; text-decoration:none; word-break:break-word; }
+  .contact-card a:hover{ text-decoration:underline; }
+
+  footer{ text-align:center; padding:34px; font-family:var(--mono); color:var(--ink-soft); font-size:12px; }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:760px){
+    .nav-inner{ flex-direction:column; gap:10px; padding:14px 20px; }
+    .nav-links{ gap:14px; flex-wrap:wrap; justify-content:center; }
+    .hero{ padding:56px 0; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-figure{ order:-1; max-width:280px; margin:0 auto 20px; }
+    .hero h1{ font-size:32px; }
+    .research-grid, .qual-grid{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .education-item{ grid-template-columns:1fr; }
+  }
+
+</style>
 </head>
-
-
 <body>
 
-
-<!-- Navigation -->
-
 <nav>
-
-    <div class="nav-container">
-
-        <div class="logo">
-            Abhay Chauhan
-        </div>
-
-        <ul class="nav-links">
-
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-    </div>
-
+  <div class="nav-inner">
+    <div class="logo">ABHAY<span>·</span>CHAUHAN</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
-
-
-<!-- Hero -->
-
 <header class="hero">
-
-    <div class="container">
-
-        <h1>Abhay Chauhan</h1>
-
-        <h2>
-            Computational Chemistry & Molecular Simulation
-        </h2>
-
-        <p>
-
-            Computational researcher working at the interface of
-            molecular simulation, computational chemistry, and materials
-            science, with experience in molecular dynamics, quantum
-            chemical calculations, polymer-grafted nanoparticles,
-            and nanoscale molecular systems.
-
-        </p>
-
-
-        <div class="buttons">
-
-            <a class="button"
-               href="https://github.com/Abhay125-chauhan"
-               target="_blank">
-                GitHub
-            </a>
-
-            <a class="button"
-               href="https://scholar.google.com/citations?user=ETH3gmcAAAAJ"
-               target="_blank">
-                Google Scholar
-            </a>
-
-            <a class="button"
-               href="mailto:abhaychauhan7895625@gmail.com">
-                Email
-            </a>
-
-        </div>
-
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Computational Chemist</div>
+      <h1>Abhay Chauhan</h1>
+      <p class="role">Molecular simulation, quantum chemistry &amp; the structure of soft matter</p>
+      <p class="lede">
+        I study how molecular-level interactions give rise to emergent
+        structure — from the hydrophobic collapse of thermoresponsive
+        diblock copolymers to the pressure-driven polymerization of
+        carbon monoxide — using molecular dynamics, DFT, and free-energy
+        methods.
+      </p>
+      <div class="buttons">
+        <a class="button accent" href="https://github.com/Abhay125-chauhan" target="_blank">GitHub ↗</a>
+        <a class="button" href="https://scholar.google.com/citations?user=ETH3gmcAAAAJ" target="_blank">Google Scholar ↗</a>
+        <a class="button" href="mailto:abhaychauhan7895625@gmail.com">Email</a>
+      </div>
     </div>
 
+    <figure class="hero-figure">
+      <svg viewBox="0 0 400 400" role="img" aria-label="Diagram of a polymer-grafted nanoparticle with diblock copolymer chains radiating from a central core">
+        <g class="diagram-group" transform-origin="200 200">
+          <circle cx="200" cy="200" r="34" fill="none" stroke="#13191D" stroke-width="1.4"/>
+          <circle cx="200" cy="200" r="34" fill="#EAF0F4" opacity="0.5"/>
+
+          <!-- chain 1 : 0deg -->
+          <g class="chain chain-1" transform-origin="200 200">
+            <polyline points="200,200 245,200 267,200 289,200 311,200 333,200" fill="none" stroke="#48575F" stroke-width="1"/>
+            <circle cx="245" cy="200" r="6" fill="#2F5C82"/>
+            <circle cx="267" cy="200" r="6" fill="#2F5C82"/>
+            <circle cx="289" cy="200" r="6" fill="#3E9C86"/>
+            <circle cx="311" cy="200" r="6" fill="#3E9C86"/>
+            <circle cx="333" cy="200" r="6" fill="#3E9C86"/>
+          </g>
+
+          <!-- chain 2 : 60deg -->
+          <g class="chain chain-2" transform-origin="200 200">
+            <polyline points="200,200 222.5,238.97 233.5,258.02 244.5,277.07 255.5,296.13 266.5,315.18" fill="none" stroke="#48575F" stroke-width="1"/>
+            <circle cx="222.5" cy="238.97" r="6" fill="#2F5C82"/>
+            <circle cx="233.5" cy="258.02" r="6" fill="#2F5C82"/>
+            <circle cx="244.5" cy="277.07" r="6" fill="#3E9C86"/>
+            <circle cx="255.5" cy="296.13" r="6" fill="#3E9C86"/>
+            <circle cx="266.5" cy="315.18" r="6" fill="#3E9C86"/>
+          </g>
+
+          <!-- chain 3 : 120deg -->
+          <g class="chain chain-3" transform-origin="200 200">
+            <polyline points="200,200 177.5,238.97 166.5,258.02 155.5,277.07 144.5,296.13 133.5,315.18" fill="none" stroke="#48575F" stroke-width="1"/>
+            <circle cx="177.5" cy="238.97" r="6" fill="#2F5C82"/>
+            <circle cx="166.5" cy="258.02" r="6" fill="#2F5C82"/>
+            <circle cx="155.5" cy="277.07" r="6" fill="#3E9C86"/>
+            <circle cx="144.5" cy="296.13" r="6" fill="#3E9C86"/>
+            <circle cx="133.5" cy="315.18" r="6" fill="#3E9C86"/>
+          </g>
+
+          <!-- chain 4 : 180deg -->
+          <g class="chain chain-4" transform-origin="200 200">
+            <polyline points="200,200 155,200 133,200 111,200 89,200 67,200" fill="none" stroke="#48575F" stroke-width="1"/>
+            <circle cx="155" cy="200" r="6" fill="#2F5C82"/>
+            <circle cx="133" cy="200" r="6" fill="#2F5C82"/>
+            <circle cx="111" cy="200" r="6" fill="#3E9C86"/>
+            <circle cx="89" cy="200" r="6" fill="#3E9C86"/>
+            <circle cx="67" cy="200" r="6" fill="#3E9C86"/>
+          </g>
+
+          <!-- chain 5 : 240deg -->
+          <g class="chain chain-5" transform-origin="200 200">
+            <polyline points="200,200 177.5,161.03 166.5,141.98 155.5,122.93 144.5,103.87 133.5,84.82" fill="none" stroke="#48575F" stroke-width="1"/>
+            <circle cx="177.5" cy="161.03" r="6" fill="#2F5C82"/>
+            <circle cx="166.5" cy="141.98" r="6" fill="#2F5C82"/>
+            <circle cx="155.5" cy="122.93" r="6" fill="#3E9C86"/>
+            <circle cx="144.5" cy="103.87" r="6" fill="#3E9C86"/>
+            <circle cx="133.5" cy="84.82" r="6" fill="#3E9C86"/>
+          </g>
+
+          <!-- chain 6 : 300deg -->
+          <g class="chain chain-6" transform-origin="200 200">
+            <polyline points="200,200 222.5,161.03 233.5,141.98 244.5,122.93 255.5,103.87 266.5,84.82" fill="none" stroke="#48575F" stroke-width="1"/>
+            <circle cx="222.5" cy="161.03" r="6" fill="#2F5C82"/>
+            <circle cx="233.5" cy="141.98" r="6" fill="#2F5C82"/>
+            <circle cx="244.5" cy="122.93" r="6" fill="#3E9C86"/>
+            <circle cx="255.5" cy="103.87" r="6" fill="#3E9C86"/>
+            <circle cx="266.5" cy="84.82" r="6" fill="#3E9C86"/>
+          </g>
+        </g>
+      </svg>
+      <figcaption>fig. 0 — diblock copolymer chains grafted on a nanoparticle core</figcaption>
+    </figure>
+  </div>
 </header>
 
-
-
-<!-- About -->
-
 <section id="about">
-
-    <div class="container">
-
-        <h2>About Me</h2>
-
-        <p>
-
-            I am a computational materials scientist and chemist with
-            research experience in molecular dynamics simulations,
-            quantum chemistry, and computational modeling of molecular
-            and nanoscale systems.
-
-        </p>
-
-        <br>
-
-        <p>
-
-            My research has focused on understanding structure,
-            dynamics, thermoresponsive behavior, hydrophobic collapse,
-            polymer conformations, and molecular interactions using
-            atomistic and coarse-grained computational approaches.
-
-        </p>
-
-        <br>
-
-        <p>
-
-            I am particularly interested in developing computational
-            approaches to understand complex molecular systems and
-            connect molecular-level interactions with emergent
-            structural and thermodynamic behavior.
-
-        </p>
-
-    </div>
-
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>Working at the molecular scale</h2>
+    <p>
+      I am a computational materials scientist and chemist with research
+      experience in molecular dynamics simulations, quantum chemistry, and
+      computational modeling of molecular and nanoscale systems.
+    </p>
+    <p>
+      My research has focused on understanding structure, dynamics,
+      thermoresponsive behavior, hydrophobic collapse, polymer
+      conformations, and molecular interactions using atomistic and
+      coarse-grained computational approaches.
+    </p>
+    <p>
+      I am particularly interested in developing computational approaches
+      that connect molecular-level interactions with emergent structural
+      and thermodynamic behavior.
+    </p>
+  </div>
 </section>
-
-
-
-<!-- Research -->
 
 <section id="research">
-
-    <div class="container">
-
-        <h2>Research Interests</h2>
-
-        <div class="research-grid">
-
-
-            <div class="research-card">
-
-                <h3>Molecular Dynamics</h3>
-
-                <p>
-                    Atomistic and coarse-grained molecular dynamics
-                    simulations of polymers, nanoparticles and
-                    biomolecular systems.
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <h3>Computational Chemistry</h3>
-
-                <p>
-                    Quantum chemical calculations, DFT, molecular
-                    structure optimization, electronic structure and
-                    reaction mechanisms.
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <h3>Responsive Nanomaterials</h3>
-
-                <p>
-                    Computational design of polymer-grafted nanoparticles
-                    and investigation of temperature-, hydrophobicity-
-                    and pH-dependent structural transitions.
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <h3>Polymer & Soft Matter</h3>
-
-                <p>
-                    Polymer conformations, grafting-density effects,
-                    mushroom-to-brush transitions and polymer-solvent
-                    interactions.
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <h3>Free-Energy Methods</h3>
-
-                <p>
-                    Potential of mean force calculations, umbrella
-                    sampling and molecular-level analysis of
-                    conformational transitions.
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <h3>Computational Materials Science</h3>
-
-                <p>
-                    Molecular-level modeling of materials and interfaces
-                    to understand structure-property relationships.
-                </p>
-
-            </div>
-
-
-        </div>
-
+  <div class="wrap">
+    <div class="eyebrow">Research interests</div>
+    <h2>Six threads, one scale</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <h3>Molecular Dynamics</h3>
+        <p>Atomistic and coarse-grained simulations of polymers, nanoparticles and biomolecular systems.</p>
+      </div>
+      <div class="research-card">
+        <h3>Computational Chemistry</h3>
+        <p>Quantum chemical calculations, DFT, molecular structure optimization, electronic structure and reaction mechanisms.</p>
+      </div>
+      <div class="research-card">
+        <h3>Responsive Nanomaterials</h3>
+        <p>Polymer-grafted nanoparticles and temperature-, hydrophobicity- and pH-dependent structural transitions.</p>
+      </div>
+      <div class="research-card">
+        <h3>Polymer &amp; Soft Matter</h3>
+        <p>Polymer conformations, grafting-density effects, mushroom-to-brush transitions and polymer–solvent interactions.</p>
+      </div>
+      <div class="research-card">
+        <h3>Free-Energy Methods</h3>
+        <p>Potential of mean force calculations, umbrella sampling and molecular-level analysis of conformational transitions.</p>
+      </div>
+      <div class="research-card">
+        <h3>Computational Materials Science</h3>
+        <p>Molecular-level modeling of materials and interfaces to understand structure–property relationships.</p>
+      </div>
     </div>
-
+  </div>
 </section>
-
-
-
-<!-- Research Projects -->
 
 <section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Research projects</div>
+    <h2>Selected work</h2>
 
-    <div class="container">
+    <div class="project">
+      <h3>Designing Thermoresponsive Nanoparticles through Hydrophobicity Control of Grafted Diblock Copolymers</h3>
+      <p class="institution">M.S.(R.) Thesis — IIT Delhi</p>
 
-        <h2>Research Projects</h2>
+      <figure class="figure-frame" data-label="Figure — polymer-grafted nanoparticle model (image not found: figure3_compressed_page-0001.jpg)">
+        <img src="./figure3_compressed_page-0001.jpg" alt="Polymer-grafted nanoparticle model"
+             onerror="this.parentElement.classList.add('img-error')">
+        <figcaption>Polymer-grafted nanoparticle model used in the study</figcaption>
+      </figure>
 
-
-        <!-- IIT Delhi Project 1 -->
-
-        <div class="project">
-
-            <h3>
-                Designing Thermoresponsive Nanoparticles through
-                Hydrophobicity Control of Grafted Diblock Copolymers
-            </h3>
-
-            <p class="institution">
-                M.S.(R.) Thesis — Indian Institute of Technology Delhi
-            </p>
-            <!-- Project Figure -->
-            <img src="./figure3_compressed_page-0001.jpg"
-                alt="Polymer-grafted nanoparticle model"
-                style="width:700px; max-width:100%;">
-            <p>
-                This project investigated how polymer hydrophobicity and
-                temperature influence the structure and conformational
-                behavior of polymer-grafted nanoparticles.
-            </p>
-
-            <ul>
-
-                <li>
-                    Designed generic polymer-grafted nanoparticle models
-                    with 20-bead polymer chains.
-                </li>
-
-                <li>
-                    Systematically varied polymer hydrophobicity from
-                    0–100% in 10% increments.
-                </li>
-
-                <li>
-                    Performed molecular dynamics simulations at 270, 300,
-                    330 and 360 K.
-                </li>
-
-                <li>
-                    Analyzed polymer–nanoparticle structure, inter-chain
-                    contacts, effective nanoparticle radius and polymer
-                    conformation.
-                </li>
-
-                <li>
-                    Calculated free-energy / PMF profiles and generated
-                    two-dimensional density maps to investigate
-                    hydrophobic collapse and temperature-dependent
-                    conformational transitions.
-                </li>
-
-            </ul>
-
-            <p class="methods">
-
-                <strong>Methods:</strong>
-                Molecular Dynamics · GROMACS · Python · VMD ·
-                Free-Energy Calculations
-
-            </p>
-
-        </div>
-
-
-
-        <!-- IIT Delhi Project 2 -->
-
-        <div class="project">
-
-            <h3>
-                MD-Guided Design of Hybrid Polymer–Protein Conjugates
-                with Tunable Aqueous Solubility and pH-Responsive
-                Polymer-Grafted Gold Nanoparticles
-            </h3>
-
-            <p class="institution">
-                Research Project — Indian Institute of Technology Delhi
-            </p>
-
-            <p>
-                Molecular dynamics simulations were used to investigate
-                polymer architecture, grafting density and pH-dependent
-                structural behavior of polymer-functionalized gold
-                nanoparticles.
-            </p>
-
-            <ul>
-
-                <li>
-                    Investigated PEG, PLL–PEG, PLL–PEG–PLL and PLL
-                    polymer architectures.
-                </li>
-
-                <li>
-                    Performed DFT dihedral scans to determine
-                    PEG–PLL linkage parameters.
-                </li>
-
-                <li>
-                    Developed PEG6–PLL6-functionalized gold nanoparticle
-                    models.
-                </li>
-
-                <li>
-                    Varied grafting density from 4 to 40 polymer chains
-                    to investigate polymer morphology and the
-                    mushroom-to-brush transition.
-                </li>
-
-                <li>
-                    Investigated pH-dependent structural changes in
-                    PEG6–PLL14 functionalized gold nanoparticles.
-                </li>
-
-            </ul>
-
-            <p class="methods">
-
-                <strong>Methods:</strong>
-                Molecular Dynamics · GROMACS · DFT · Python ·
-                VMD · Polymer Modeling
-
-            </p>
-
-        </div>
-
-
-
-        <!-- MNIT Project -->
-
-        <div class="project">
-
-            <h3>
-                Pressure-Induced Polymerization of Carbon Monoxide:
-                A Quantum Chemical Investigation of (CO)n Oligomerization
-            </h3>
-
-            <p class="institution">
-                M.Sc. Thesis — Malaviya National Institute of Technology Jaipur
-            </p>
-            <img src="figureCO.jpg"
-                alt="Pressure-induced CO polymerization"
-                class="project-image"
-                style="width:700px; max-width:100%;">
-
-            <p>
-                This project investigated the molecular mechanism of
-                pressure-induced carbon monoxide polymerization using
-                quantum chemical calculations.
-            </p>
-
-            <ul>
-
-                <li>
-                    Investigated (CO)n clusters with n = 2–6.
-                </li>
-
-                <li>
-                    Generated structures using ABCluster and optimized
-                    them using density functional theory and
-                    coupled-cluster-level approaches.
-                </li>
-
-                <li>
-                    Investigated CO clusters confined inside He@C60
-                    and He@C180 cages to model pressure effects.
-                </li>
-
-                <li>
-                    Used ONIOM-based computational models to simulate
-                    increasing pressure through cage-size reduction.
-                </li>
-
-                <li>
-                    Analyzed structural, energetic, bonding, electronic
-                    and wavefunction properties to understand CO
-                    polymerization.
-                </li>
-
-            </ul>
-
-            <p class="methods">
-
-                <strong>Methods:</strong>
-                DFT · ONIOM · Quantum Chemistry ·
-                ABCluster · Gaussian · ORCA
-
-            </p>
-
-        </div>
-
-
+      <p>This project investigated how polymer hydrophobicity and temperature influence the structure and conformational behavior of polymer-grafted nanoparticles.</p>
+      <ul>
+        <li>Designed generic polymer-grafted nanoparticle models with 20-bead polymer chains.</li>
+        <li>Systematically varied polymer hydrophobicity from 0–100% in 10% increments.</li>
+        <li>Performed molecular dynamics simulations at 270, 300, 330 and 360 K.</li>
+        <li>Analyzed polymer–nanoparticle structure, inter-chain contacts, effective nanoparticle radius and polymer conformation.</li>
+        <li>Calculated free-energy / PMF profiles and generated 2D density maps to investigate hydrophobic collapse and temperature-dependent conformational transitions.</li>
+      </ul>
+      <div class="methods-row">
+        <span>Molecular Dynamics</span><span>GROMACS</span><span>Python</span><span>VMD</span><span>Free-Energy Calculations</span>
+      </div>
     </div>
 
-</section>
+    <div class="project">
+      <h3>MD-Guided Design of Hybrid Polymer–Protein Conjugates with Tunable Aqueous Solubility and pH-Responsive Polymer-Grafted Gold Nanoparticles</h3>
+      <p class="institution">Research Project — IIT Delhi</p>
+      <p>Molecular dynamics simulations were used to investigate polymer architecture, grafting density and pH-dependent structural behavior of polymer-functionalized gold nanoparticles.</p>
+      <ul>
+        <li>Investigated PEG, PLL–PEG, PLL–PEG–PLL and PLL polymer architectures.</li>
+        <li>Performed DFT dihedral scans to determine PEG–PLL linkage parameters.</li>
+        <li>Developed PEG6–PLL6-functionalized gold nanoparticle models.</li>
+        <li>Varied grafting density from 4 to 40 polymer chains to investigate polymer morphology and the mushroom-to-brush transition.</li>
+        <li>Investigated pH-dependent structural changes in PEG6–PLL14 functionalized gold nanoparticles.</li>
+      </ul>
+      <div class="methods-row">
+        <span>Molecular Dynamics</span><span>GROMACS</span><span>DFT</span><span>Python</span><span>VMD</span><span>Polymer Modeling</span>
+      </div>
+    </div>
 
-<!-- Codes & Scripts -->
+    <div class="project">
+      <h3>Pressure-Induced Polymerization of Carbon Monoxide: A Quantum Chemical Investigation of (CO)ₙ Oligomerization</h3>
+      <p class="institution">M.Sc. Thesis — MNIT Jaipur</p>
+
+      <figure class="figure-frame" data-label="Figure — pressure-induced CO polymerization (image not found: figureCO.jpg)">
+        <img src="figureCO.jpg" alt="Pressure-induced CO polymerization"
+             onerror="this.parentElement.classList.add('img-error')">
+        <figcaption>Confinement model for pressure-induced CO oligomerization</figcaption>
+      </figure>
+
+      <p>This project investigated the molecular mechanism of pressure-induced carbon monoxide polymerization using quantum chemical calculations.</p>
+      <ul>
+        <li>Investigated (CO)ₙ clusters with n = 2–6.</li>
+        <li>Generated structures using ABCluster and optimized them using density functional theory and coupled-cluster-level approaches.</li>
+        <li>Investigated CO clusters confined inside He@C₆₀ and He@C₁₈₀ cages to model pressure effects.</li>
+        <li>Used ONIOM-based computational models to simulate increasing pressure through cage-size reduction.</li>
+        <li>Analyzed structural, energetic, bonding, electronic and wavefunction properties to understand CO polymerization.</li>
+      </ul>
+      <div class="methods-row">
+        <span>DFT</span><span>ONIOM</span><span>Quantum Chemistry</span><span>ABCluster</span><span>Gaussian</span><span>ORCA</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="codes">
-
-    <div class="container">
-
-        <h2>Codes & Scripts</h2>
-
-        <div class="project">
-
-            <h3>
-                Molecular Dynamics Analysis Scripts
-            </h3>
-
-            <p class="institution">
-                Python · Molecular Dynamics · GROMACS
-            </p>
-
-            <p>
-                A collection of Python-based scripts developed for
-                analysis and post-processing of molecular dynamics
-                simulations. The scripts are designed to extract
-                structural and dynamical properties from simulation
-                trajectories and assist in systematic analysis of
-                molecular simulation data.
-            </p>
-
-            <ul>
-
-                <li>
-                    Analysis and post-processing of molecular dynamics
-                    trajectories.
-                </li>
-
-                <li>
-                    Calculation and analysis of structural properties
-                    of molecular systems.
-                </li>
-
-                <li>
-                    Automated processing of simulation data using Python.
-                </li>
-
-                <li>
-                    Useful tools for organizing and analyzing
-                    computational simulation results.
-                </li>
-
-            </ul>
-
-            <p class="methods">
-
-                <strong>Tools:</strong>
-                Python · GROMACS · Molecular Dynamics · Data Analysis
-
-            </p>
-
-            <div class="buttons">
-
-                <a class="button"
-                   href="https://github.com/Abhay125-chauhan/Analysis_Script"
-                   target="_blank">
-                    View on GitHub →
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
+  <div class="wrap">
+    <div class="eyebrow">Codes &amp; scripts</div>
+    <h2>Molecular dynamics analysis scripts</h2>
+    <p style="color:var(--ink-soft); max-width:700px; margin-bottom:16px;">
+      A collection of Python-based scripts for analysis and post-processing
+      of molecular dynamics trajectories — extracting structural and
+      dynamical properties and assisting in systematic analysis of
+      simulation data.
+    </p>
+    <ul style="list-style:none; max-width:700px; margin-bottom:16px;">
+      <li style="position:relative; padding-left:20px; margin-bottom:10px;"><span style="position:absolute; left:0; color:var(--blue); font-size:11px; top:5px;">▪</span>Analysis and post-processing of molecular dynamics trajectories.</li>
+      <li style="position:relative; padding-left:20px; margin-bottom:10px;"><span style="position:absolute; left:0; color:var(--blue); font-size:11px; top:5px;">▪</span>Calculation and analysis of structural properties of molecular systems.</li>
+      <li style="position:relative; padding-left:20px; margin-bottom:10px;"><span style="position:absolute; left:0; color:var(--blue); font-size:11px; top:5px;">▪</span>Automated processing of simulation data using Python.</li>
+      <li style="position:relative; padding-left:20px;"><span style="position:absolute; left:0; color:var(--blue); font-size:11px; top:5px;">▪</span>Tools for organizing and analyzing computational simulation results.</li>
+    </ul>
+    <a class="button accent" href="https://github.com/Abhay125-chauhan/Analysis_Script" target="_blank">View on GitHub ↗</a>
+  </div>
 </section>
-
-
-
-
-
-<!-- Publications -->
 
 <section id="publications">
+  <div class="wrap">
+    <div class="eyebrow">Publications</div>
+    <h2>Peer-reviewed work</h2>
 
-    <div class="container">
-
-        <h2>Publications</h2>
-
-
-        <div class="publication">
-
-            <p class="publication-title">
-
-                1. Chauhan, Abhay, and Divya Nayar.
-                “Designing Thermoresponsive Nanoparticles through
-                Hydrophobicity Control of Grafted Diblock Copolymers.”
-
-            </p>
-
-            <p class="journal">
-
-                Molecular Systems Design & Engineering (2026)
-
-                <br>
-
-                DOI:
-                <a href="https://doi.org/10.1039/D6ME00040A"
-                   target="_blank">
-                    10.1039/D6ME00040A
-                </a>
-
-            </p>
-
-        </div>
-
-
-
-        <div class="publication">
-
-            <p class="publication-title">
-
-                2. Chauhan, Abhay, et al.
-                “Understanding Pressure-Induced Polymerization of
-                Carbon Monoxide at Molecular-Level: A Quantum Chemical
-                Investigation of Oligomerization of (CO)n (n = 2–6).”
-
-            </p>
-
-            <p class="journal">
-
-                International Journal of Quantum Chemistry (2026)
-
-                <br>
-
-                DOI:
-                <a href="https://doi.org/10.1002/qua.70202"
-                   target="_blank">
-                    10.1002/qua.70202
-                </a>
-
-            </p>
-
-        </div>
-
-
+    <div class="publication">
+      <div class="pub-num">01</div>
+      <div>
+        <p class="publication-title">Chauhan, Abhay, and Divya Nayar. "Designing Thermoresponsive Nanoparticles through Hydrophobicity Control of Grafted Diblock Copolymers."</p>
+        <p class="journal">Molecular Systems Design &amp; Engineering (2026) · DOI: <a href="https://doi.org/10.1039/D6ME00040A" target="_blank">10.1039/D6ME00040A</a></p>
+      </div>
     </div>
 
+    <div class="publication">
+      <div class="pub-num">02</div>
+      <div>
+        <p class="publication-title">Chauhan, Abhay, et al. "Understanding Pressure-Induced Polymerization of Carbon Monoxide at Molecular-Level: A Quantum Chemical Investigation of Oligomerization of (CO)ₙ (n = 2–6)."</p>
+        <p class="journal">International Journal of Quantum Chemistry (2026) · DOI: <a href="https://doi.org/10.1002/qua.70202" target="_blank">10.1002/qua.70202</a></p>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-<!-- Education -->
 
 <section id="education">
+  <div class="wrap">
+    <div class="eyebrow">Education</div>
+    <h2>Academic background</h2>
 
-    <div class="container">
-
-        <h2>Education</h2>
-
-
-        <div class="education-item">
-
-            <h3>
-                M.S.(R.) in Materials Science
-            </h3>
-
-            <p>
-                Indian Institute of Technology (IIT) Delhi, India
-            </p>
-
-            <p class="date">
-                CGPA: 8.286 · Focus: Computational Materials Science
-            </p>
-
-        </div>
-
-
-        <div class="education-item">
-
-            <h3>
-                M.Sc. in Chemistry
-            </h3>
-
-            <p>
-                Malaviya National Institute of Technology (MNIT) Jaipur, India
-            </p>
-
-            <p class="date">
-                CGPA: 8.005 · Focus: Computational Chemistry
-            </p>
-
-        </div>
-
-
-        <div class="education-item">
-
-            <h3>
-                B.Sc. (Hons.) in Chemistry
-            </h3>
-
-            <p>
-                Swami Vivekanand Subharti University, Meerut, India
-            </p>
-
-            <p class="date">
-                CGPA: 7.87 · Focus: Physical and Organic Chemistry
-            </p>
-
-        </div>
-
-
+    <div class="education-item">
+      <div class="date">CGPA 8.286</div>
+      <div>
+        <h3>M.S.(R.) in Materials Science</h3>
+        <p class="school">Indian Institute of Technology (IIT) Delhi, India — Computational Materials Science</p>
+      </div>
     </div>
-
+    <div class="education-item">
+      <div class="date">CGPA 8.005</div>
+      <div>
+        <h3>M.Sc. in Chemistry</h3>
+        <p class="school">Malaviya National Institute of Technology (MNIT) Jaipur, India — Computational Chemistry</p>
+      </div>
+    </div>
+    <div class="education-item">
+      <div class="date">CGPA 7.87</div>
+      <div>
+        <h3>B.Sc. (Hons.) in Chemistry</h3>
+        <p class="school">Swami Vivekanand Subharti University, Meerut, India — Physical &amp; Organic Chemistry</p>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-<!-- Skills -->
 
 <section id="skills">
-
-    <div class="container">
-
-        <h2>Technical Skills</h2>
-
-        <div class="skills">
-
-            <span class="skill">GROMACS</span>
-            <span class="skill">LAMMPS</span>
-            <span class="skill">ORCA</span>
-            <span class="skill">Gaussian 16</span>
-            <span class="skill">VMD</span>
-            <span class="skill">ChimeraX</span>
-            <span class="skill">Python</span>
-            <span class="skill">C++</span>
-            <span class="skill">Bash Scripting</span>
-            <span class="skill">Molecular Dynamics</span>
-            <span class="skill">DFT</span>
-            <span class="skill">ONIOM</span>
-            <span class="skill">Free-Energy Calculations</span>
-            <span class="skill">HPC</span>
-
-        </div>
-
+  <div class="wrap">
+    <div class="eyebrow">Technical skills</div>
+    <h2>An element table of tools</h2>
+    <div class="skills-grid">
+      <div class="element"><span class="num">01</span><span class="sym">Gr</span><span class="name">GROMACS</span></div>
+      <div class="element"><span class="num">02</span><span class="sym">Lm</span><span class="name">LAMMPS</span></div>
+      <div class="element"><span class="num">03</span><span class="sym">Or</span><span class="name">ORCA</span></div>
+      <div class="element"><span class="num">04</span><span class="sym">G16</span><span class="name">Gaussian 16</span></div>
+      <div class="element"><span class="num">05</span><span class="sym">Vm</span><span class="name">VMD</span></div>
+      <div class="element"><span class="num">06</span><span class="sym">Cx</span><span class="name">ChimeraX</span></div>
+      <div class="element"><span class="num">07</span><span class="sym">Py</span><span class="name">Python</span></div>
+      <div class="element"><span class="num">08</span><span class="sym">C++</span><span class="name">C++</span></div>
+      <div class="element"><span class="num">09</span><span class="sym">Sh</span><span class="name">Bash Scripting</span></div>
+      <div class="element"><span class="num">10</span><span class="sym">Md</span><span class="name">Molecular Dynamics</span></div>
+      <div class="element"><span class="num">11</span><span class="sym">Dft</span><span class="name">DFT</span></div>
+      <div class="element"><span class="num">12</span><span class="sym">On</span><span class="name">ONIOM</span></div>
+      <div class="element"><span class="num">13</span><span class="sym">ΔG</span><span class="name">Free-Energy Calc.</span></div>
+      <div class="element"><span class="num">14</span><span class="sym">Hpc</span><span class="name">HPC</span></div>
     </div>
-
+  </div>
 </section>
-
-
-
-<!-- Teaching -->
 
 <section id="teaching">
-
-    <div class="container">
-
-        <h2>Teaching Experience</h2>
-
-        <div class="teaching">
-
-            <h3>
-                Teaching Assistant — Materials Simulation Methods
-                Using High-Performance Computing (MLL 760)
-            </h3>
-
-            <p>
-                Indian Institute of Technology Delhi
-            </p>
-
-            <br>
-
-            <p>
-
-                Taught graduate students Python 3, HPC architecture,
-                parallel job execution, CPU allocation and HPC
-                commands, with hands-on training in GROMACS and
-                LAMMPS for molecular dynamics simulations.
-
-            </p>
-
-        </div>
-
+  <div class="wrap">
+    <div class="eyebrow">Teaching</div>
+    <h2>Teaching experience</h2>
+    <div class="teaching">
+      <h3>Teaching Assistant — Materials Simulation Methods Using High-Performance Computing (MLL 760)</h3>
+      <p class="place">Indian Institute of Technology Delhi</p>
+      <p>Taught graduate students Python 3, HPC architecture, parallel job execution, CPU allocation and HPC commands, with hands-on training in GROMACS and LAMMPS for molecular dynamics simulations.</p>
     </div>
-
+  </div>
 </section>
-
-
-
-<!-- Qualifications -->
 
 <section id="qualifications">
-
-    <div class="container">
-
-        <h2>Academic Qualifications</h2>
-
-        <div class="research-grid">
-
-            <div class="research-card">
-
-                <h3>CSIR-NET Chemistry</h3>
-
-                <p>
-                    Lectureship — 2023
-                    <br>
-                    All India Rank: <strong>20</strong>
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <h3>GATE Chemistry</h3>
-
-                <p>
-                    2024
-                    <br>
-                    All India Rank: <strong>569</strong>
-                </p>
-
-            </div>
-
-
-            <div class="research-card">
-
-                <h3>IIT JAM Chemistry</h3>
-
-                <p>
-                    2021
-                    <br>
-                    All India Rank: <strong>760</strong>
-                </p>
-
-            </div>
-
-        </div>
-
+  <div class="wrap">
+    <div class="eyebrow">Academic qualifications</div>
+    <h2>National examinations</h2>
+    <div class="qual-grid">
+      <div class="qual-card">
+        <h3>CSIR-NET Chemistry</h3>
+        <span class="year">Lectureship — 2023</span><br>
+        <span class="rank">20</span><span class="rank-label">All India Rank</span>
+      </div>
+      <div class="qual-card">
+        <h3>GATE Chemistry</h3>
+        <span class="year">2024</span><br>
+        <span class="rank">569</span><span class="rank-label">All India Rank</span>
+      </div>
+      <div class="qual-card">
+        <h3>IIT JAM Chemistry</h3>
+        <span class="year">2021</span><br>
+        <span class="rank">760</span><span class="rank-label">All India Rank</span>
+      </div>
     </div>
-
+  </div>
 </section>
 
-
-
-<!-- Contact -->
-
-<section id="contact">
-
-    <div class="container contact">
-
-        <h2>Contact</h2>
-
-        <p>
-            <strong>Email:</strong>
-            <a href="mailto:abhaychauhan7895625@gmail.com">
-                abhaychauhan7895625@gmail.com
-            </a>
-        </p>
-
-        <p>
-            <strong>GitHub:</strong>
-            <a href="https://github.com/Abhay125-chauhan"
-               target="_blank">
-                github.com/Abhay125-chauhan
-            </a>
-        </p>
-
-        <p>
-            <strong>Google Scholar:</strong>
-            <a href="https://scholar.google.com/citations?user=ETH3gmcAAAAJ"
-               target="_blank">
-                Google Scholar Profile
-            </a>
-        </p>
-
+<section id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Get in touch</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="k">Email</span>
+        <a href="mailto:abhaychauhan7895625@gmail.com">abhaychauhan7895625@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <span class="k">GitHub</span>
+        <a href="https://github.com/Abhay125-chauhan" target="_blank">github.com/Abhay125-chauhan</a>
+      </div>
+      <div class="contact-card">
+        <span class="k">Google Scholar</span>
+        <a href="https://scholar.google.com/citations?user=ETH3gmcAAAAJ" target="_blank">Scholar profile ↗</a>
+      </div>
     </div>
-
+  </div>
 </section>
 
-
-
-<!-- Footer -->
-
-<footer>
-
-    © 2026 Abhay Chauhan · Computational Chemistry & Materials Science
-
-</footer>
-
+<footer>© 2026 Abhay Chauhan · Computational Chemistry &amp; Materials Science</footer>
 
 </body>
-
 </html>
-```
-
